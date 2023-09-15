@@ -266,6 +266,11 @@
     position: relative;
     margin-bottom: 45px;
 }
+.team-item-2 {
+    color: white;
+    position: relative;
+    margin-bottom: 45px;
+}
 .team-item-center {
     color: white;
     position: relative ;
@@ -296,6 +301,9 @@
     height: 100%;
     bottom: 0;
 }
+.team-item-2:hover .team-text {
+    color: white;
+}
 
 .team-social {
     position: absolute;
@@ -305,6 +313,11 @@
 }
 
 .team-item:hover .team-social {
+    transition-delay: .3s;
+    opacity: 1;
+}
+
+.team-item-2:hover .team-social {
     transition-delay: .3s;
     opacity: 1;
 }
@@ -335,7 +348,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    color: var(--dark);
     background: var(--secondary);
     font-size: 22px;
     border-radius: 45px;
@@ -344,7 +357,7 @@
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
-    color: var(--dark);
+    color: orange;
 }
 
 .testimonial-carousel .owl-item img {
