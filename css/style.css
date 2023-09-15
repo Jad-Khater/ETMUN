@@ -332,7 +332,23 @@
         background-size: cover;
     }
 }
+@media screen and  (max-width: 980px) and (orientation:portrait){
+    #warning-message { 
+        display:none; 
+    }
+}
 
+@media screen and  (max-width: 980px) and (orientation:landscape){
+    .content { 
+        display:none; 
+    }
+    .mobile {
+        display:none; 
+    }
+    #warning-message { 
+        display:block; 
+    }
+} 
 .testimonial-carousel .owl-nav {
     margin-top: 30px;
     display: flex;
