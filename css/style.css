@@ -368,7 +368,8 @@
     background: var(--secondary);
     font-size: 22px;
     border-radius: 45px;
-    transition: .5s;
+    transition: 0.5s;
+
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
