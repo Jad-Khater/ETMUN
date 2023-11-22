@@ -1,10 +1,11 @@
-/********** Template CSS **********/
+
 :root {
     --primary: #111d35;
     --primary_dark: #07002e;
     --secondary: #FFFFFF;
     --light: #F2F2F2;
     --dark: #272630;
+    --lato: 'Lato';
 }
 
 .btn {
@@ -189,6 +190,12 @@
     background-size: cover;
     transition: .5s;
 }
+.service-item-1,
+.contact-item-1 {
+    background: var(--primary)   top center no-repeat;
+    background-size: cover;
+    transition: .5s;
+}
 
 .service-item:hover,
 .contact-item:hover {
@@ -196,10 +203,16 @@
     background-size: cover;
 }
 
-.arabic {
+.service-item-1:hover,
+.contact-item-1:hover {
+    background: var(--primary) center no-repeat;
+    background-size: cover;
+}
+
+.text-topic {
     color: #F2F2F2;
 }
-.arabic:hover {
+.text-topic:hover {
     color: var(--primary);
 }
 .service-item .service-icon,
@@ -211,9 +224,27 @@
     background: var(--primary_dark);
     transform: rotate(-45deg);
 }
+.service-item-1 .service-icon-1,
+.contact-item-1 .contact-icon-1 {
+    margin-top: -50px;
+    width: 100px;
+    height: 100px;
+    color: var(--secondary);
+    background: var(--primary_dark);
+}
 
 .service-item .service-icon div,
 .contact-item .contact-icon div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    transition: .5s;
+}
+.service-item-1 .service-icon-1 div,
+.contact-item-1 .contact-icon-1 div {
     width: 100%;
     height: 100%;
     display: flex;
@@ -228,18 +259,44 @@
     transform: rotate(45deg);
     transition: .5s;
 }
+.service-item-1 .service-icon-1 i,
+.contact-item-1 .contact-icon-1 i {
+    transform: rotate(45deg);
+    transition: .5s;
+}
 
 .service-item:hover .service-icon div,
 .contact-item:hover .contact-icon div {
     background: var(--secondary);
 }
-
-.service-item:hover .service-icon i,
-.contact-item:hover .contact-icon i {
+.spacer {
+    height: 20px; /* Adjust the height as needed */
+    width: 100%; /* Set it to full width */
+}
+.service-item-1:hover .service-icon-1 div,
+.contact-item-1:hover .contact-icon-1 div {
+    background: var(--secondary);
+}
+.service-item-1 h3,
+.contact-item-1 h3 {
+    color: var(--light); /* Replace 'darker-color' with the desired darker text color */
+}
+.service-item-1:hover h3,
+.contact-item-1:hover h3 {
+    color: var(--primary); /* Replace 'darker-color' with the desired darker text color */
+}
+.service-item-1:hover .service-icon-1 i,
+.contact-item-1:hover .contact-icon-1 i {
     color: var(--primary);
 }
 
 .service-item a.btn {
+    position: relative;
+    bottom: -30px;
+    opacity: 0;
+}
+
+.service-item-1 a.btn {
     position: relative;
     bottom: -30px;
     opacity: 0;
@@ -250,6 +307,10 @@
     opacity: 1;
 }
 
+.service-item-1:hover a.btn {
+    bottom: 0;
+    opacity: 1;
+}
 .bg-quote {
     background: url(../img/Placeholder.png) top right no-repeat;
     background-size: contain;
@@ -396,5 +457,94 @@
     .bg-call-to-action,
     .bg-footer {
         background-size: cover;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+    color: #ffffff;
+}
+.countdown{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+.box{
+    width: 28vmin;
+    height: 28vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.5);
+    font-size: 16px;
+}
+.box:after{
+    content: "";
+    position: absolute;
+    background-color: rgba(255,255,255,0.12);
+    height: 100%;
+    width: 50%;
+    left: 0;
+}
+span.num{
+    background-color: #202020;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 5em;
+}
+span.text{
+    font-size: 1.2em;
+    background-color: #2887e3;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.5em 0;
+    font-weight: 400;
+}
+@media screen and (max-width: 1024px){
+    .countdown{
+        width: 85vw;
+    }
+    .box{
+        height: 26vmin;
+        width: 26vmin;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 768px){
+    .countdown{
+        width: 90vw;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .box{
+        width: calc( 50% - 40px );
+        height: 30vmin;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 480px){
+    .countdown{
+        gap: 15px;
+    }
+    .box{
+        width: 100%;
+        height: 25vmin;
+        font-size: 8px;
+    }
+    .span.text{
+        font-size: 1.5em;
     }
 }
